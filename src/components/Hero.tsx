@@ -1,10 +1,18 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { profile } from "@/data/profile";
 import { links as siteLinks } from "@/data/links";
 
 export function Hero() {
-  const basePath = process.env.NODE_ENV === 'production' ? '/moipin-portofolio' : '';
+  const [basePath, setBasePath] = useState('');
+  
+  useEffect(() => {
+    // Check if we're on GitHub Pages (pathname starts with /moipin-portofolio)
+    if (typeof window !== 'undefined' && window.location.pathname.startsWith('/moipin-portofolio')) {
+      setBasePath('/moipin-portofolio');
+    }
+  }, []);
   
   return (
     <section className="min-h-screen flex items-center justify-center pt-20 pb-32 relative">
