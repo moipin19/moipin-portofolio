@@ -1,8 +1,11 @@
-import Image from "next/image";
+"use client";
+
 import { profile } from "@/data/profile";
 import { links as siteLinks } from "@/data/links";
 
 export function Hero() {
+  const basePath = process.env.NODE_ENV === 'production' ? '/moipin-portofolio' : '';
+  
   return (
     <section className="min-h-screen flex items-center justify-center pt-20 pb-32 relative">
       {/* Animated gradient orbs */}
@@ -18,13 +21,12 @@ export function Hero() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
               <div className="relative">
-                <Image
-                  src="/profile.png"
+                <img
+                  src={`${basePath}/profile.png`}
                   alt={`${profile.name} - ${profile.title}`}
                   width={320}
                   height={320}
-                  className="rounded-3xl object-cover border-4 border-[#27272a] group-hover:border-blue-500/50 transition-all duration-500 group-hover:scale-105"
-                  priority
+                  className="rounded-3xl object-cover border-4 border-[#27272a] group-hover:border-blue-500/50 transition-all duration-500 group-hover:scale-105 w-[320px] h-[320px]"
                 />
               </div>
             </div>
