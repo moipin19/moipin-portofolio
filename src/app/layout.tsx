@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     shortcut: "/favicon.svg",
     apple: "/favicon.svg"
   },
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://moipin19.github.io/moipin-portofolio"),
   openGraph: {
     title: "Mohamad Nur Arifin — Software Engineer",
     description: "Senior Software Engineer specializing in React, Next.js, React Native, LitElement, accessibility, and performance.",
